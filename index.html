@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kmetija Polanec</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #e6ffe6, #ffffff);
+    color: #333;
+}
+
+header {
+    background: #2e7d32;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+nav {
+    background: #1b5e20;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    padding: 40px;
+}
+
+/* SLIKA */
+#mojaSlika {
+    max-width: 60%;
+    border-radius: 15px;
+    position: relative;
+}
+
+/* GUMBI */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #43a047;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #2e7d32;
+}
+
+.description {
+    background: #f1f8e9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+footer {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Nika Nikita in Matic Polanec</h1>
+</header>
+
+<nav>
+    <a href="#">Domov</a>
+    <a href="#">Kmetija</a>
+    <a href="#">Galerija</a>
+    <a href="#">Kontakt</a>
+</nav>
+
+<div class="container">
+
+<h2>O Maticu in njegovi kmetiji</h2>
+
+<p>
+Matic Polanec je izjemno predan kmet. Vsak dan skrbi za svojo veliko kmetijo.
+Njegova kmetija je znana po kakovosti in urejenosti.
+Rad dela z živalmi in skrbi za naravo.
+Njegova družina mu pomaga pri vsakodnevnih opravilih.
+Kmetija Polanec je ponos regije.
+Matic vedno išče nove načine za izboljšave.
+Njegova polja so vedno zelena in rodovitna.
+Kmetija ima dolgo tradicijo.
+Matic je vztrajen in delaven človek.
+Njegovo delo je pomembno za skupnost.
+Kmetija je čista in urejena.
+Živali so zdrave in dobro oskrbljene.
+Matic spoštuje naravo.
+Njegovo delo je navdihujoče.
+Kmetija raste in se razvija.
+Vsak dan prinaša nove izzive.
+Matic jih uspešno premaguje.
+Njegova prihodnost je svetla.
+Kmetija Polanec je simbol uspeha.
+</p>
+
+<!-- SLIKA -->
+<div style="text-align:center;">
+    <img id="mojaSlika" src="kmetija-polanec.jpg" alt="Kmetija Polanec">
+</div>
+
+<!-- GUMBI -->
+<div class="buttons">
+    <button onclick="alert('Dobrodošel na Kmetiji Polanec!')">Pozdrav</button>
+    <button onclick="changeColor()">Spremeni barvo</button>
+    <button onclick="showTime()">Prikaži čas</button>
+    <button onclick="addText()">Dodaj besedilo</button>
+    <button onclick="skakajSlika()">Naj slika skače</button>
+</div>
+
+<div class="description">
+    <h3>Kmetija Polanec</h3>
+    <p>
+    Kmetija Polanec je ena najboljših kmetij v regiji.
+    Znana je po vrhunski kakovosti pridelkov in tradiciji.
+    </p>
+</div>
+
+</div>
+
+<footer>
+    <p>© 2026 Kmetija Polanec</p>
+</footer>
+
+<script>
+// BARVA
+function changeColor() {
+    document.body.style.background = "#d0f0c0";
+}
+
+// ČAS
+function showTime() {
+    alert("Trenutni čas: " + new Date().toLocaleTimeString());
+}
+
+// DODAJ BESEDILO
+function addText() {
+    let p = document.createElement("p");
+    p.innerText = "Dodano novo besedilo!";
+    document.body.appendChild(p);
+}
+
+// SKAKANJE SLIKE
+function skakajSlika() {
+    let img = document.getElementById("mojaSlika");
+
+    let x = 0;
+    let y = 0;
+    let dx = 5;
+    let dy = 5;
+
+    setInterval(() => {
+        x += dx;
+        y += dy;
+
+        if (x > window.innerWidth - img.width || x < 0) {
+            dx = -dx;
+        }
+        if (y > window.innerHeight - img.height || y < 0) {
+            dy = -dy;
+        }
+
+        img.style.position = "absolute";
+        img.style.left = x + "px";
+        img.style.top = y + "px";
+
+    }, 20);
+}
+</script>
+
+</body>
+</html>
